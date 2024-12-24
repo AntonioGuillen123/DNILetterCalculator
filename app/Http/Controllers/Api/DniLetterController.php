@@ -9,42 +9,10 @@ use Illuminate\Http\Request;
 class DniLetterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Function that, given a series of numbers, calculates a DNI
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(DniLetter $dniLetter)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DniLetter $dniLetter)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(DniLetter $dniLetter)
-    {
-        //
+        
     }
 }

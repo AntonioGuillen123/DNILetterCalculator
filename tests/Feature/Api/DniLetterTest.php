@@ -20,7 +20,7 @@ class DniLetterTest extends TestCase
             'fullDNI' => '99999999R'
         ];
 
-        $response = $this->post(route('index'), [
+        $response = $this->postJson(route('index'), [
             'dni' => 99999999
         ]);
 
@@ -86,7 +86,7 @@ class DniLetterTest extends TestCase
         $this->seed(DniLetterSeeder::class);
 
         $data = [
-            'dni' => 'The dni field must be a maximum 99999999'
+            'dni' => 'The dni field must be 8 digits long'
         ];
 
         $response = $this->postJson(route('index'), [

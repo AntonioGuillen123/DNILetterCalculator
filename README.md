@@ -7,7 +7,7 @@ The DNI Letter Calculator API is a RESTful web service designed to calculate the
 - **Frameworks:** Laravel
 - **Server:** Xampp, Apache, Nodejs
 - **Database:** Mysql
-- **Others:** Composer, Postman
+- **Others:** Composer, Postman, JIRA
 
 ## 📊📁 DB Diagram
 Below is a diagram of the database:
@@ -49,9 +49,9 @@ DB_PASSWORD=
 php artisan key:generate 
 ```
 
-- Execute migrations  
+- Execute migrations with seeders
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 
 ## ▶️💻 Run Locally
@@ -89,7 +89,7 @@ If everything is correct, everything should be OK.
 
 
 A folder called coverage-report will also have been generated with **100%** coverage.
-![image](https://res.cloudinary.com/dierpqujk/image/upload/v1735062649/imagen_2024-12-24_185101290_r8ra8h.png)
+![image](https://res.cloudinary.com/dierpqujk/image/upload/v1738332264/imagen_2025-01-31_150422424_oh6wao.png)
 
 ## 📡🌐 DNI Letter Calculator API
 
@@ -97,22 +97,33 @@ This API calculates the corresponding letter for a Spanish DNI (Documento Nacion
 
 ### Dni Letter
 
-#### 1 Calculate the DNI from number
+#### Calculate the DNI from number
 
 ```http
   POST /api/dniCalculator
 ```
 
-#### Headers:
-- **Accept:** application/json 
+### 🔹Request
 
-#### Response:
-- **Status Code:** 200, 422
-- **Content Type:** application/json
+#### Header:
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Accept`      | `string` | Must be **application/json**    |
+
+#### Body: 
 
 | Parameter | Type     | Description                    |
 | :-------- | :------- | :-------------------------     |
-| `dni`    | `int` | **Required**. DNI number between 0 and 99999999    |
+| `dni`    | `integer` | **Required**. DNI number between 0 and 99999999    |
+
+
+### 🔹Response
+
+- **Status Code:** 200, 422
+- **Content Type:** application/json
+
+
 
 ## ✍️🙍 Author
 - **Antonio Guillén:**  [![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?style=flat-square&logo=github)](https://github.com/AntonioGuillen123)
